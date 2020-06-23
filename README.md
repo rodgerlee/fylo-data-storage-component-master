@@ -6,3 +6,4 @@
 
 Thanks for checking out this front-end coding challenge.
 
+finished challenge --> https://rodgerlee.github.io/fylo-data-storage-component-master/.
