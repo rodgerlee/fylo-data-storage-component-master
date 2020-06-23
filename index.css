@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gradient: linear-gradient(
+        to right,
+        hsl(125, 36%, 72%),
+        hsl(138, 85%, 36%)
+    );
+    --PaleBlue: hsl(243, 100%, 93%);
+    --GrayishBlue: hsl(229, 7%, 55%);
+    --DarkBlue: hsl(228, 56%, 26%);
+    --VeryDarkBlue: hsl(229, 57%, 11%);
+}
+
+body {
+    background-color: var(--VeryDarkBlue);
+    font-weight: 400;
+    font-family: 'Raleway', san-serif;
+}
+
+.x-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+}
+
+.left {
+    border-radius: 1rem;
+    border-top-right-radius: 30% 40%;
+    background-color: var(--DarkBlue);
+    padding: 2em 1em;
+    min-width: 380px;
+    margin: 2rem;
+}
+
+.fylo {
+    margin: 0rem 3rem;
+}
+
+.fylo img {
+    /* transform: scale(1.2); */
+}
+
+.icons {
+    display: flex;
+    margin: 2rem 2rem 0rem 2rem;
+}
+
+.icon-container {
+    cursor: pointer;
+    background-color: var(--VeryDarkBlue);
+    padding: 0.5em;
+    border-radius: 0.6rem;
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+    transition: all 0.5 ease-in;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+}
+
+.icon-container:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.icon-container img {
+    width: 1.5rem;
+}
+
+.right {
+    justify-content: center;
+}
+
+.shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+/* Progress Bar Styles */
+
+.progress-bar {
+    border-radius: 1rem;
+    background-color: var(--DarkBlue);
+    min-width: 600px;
+    padding: 2em;
+    position: relative;
+    /* top: 13%; */
+}
+
+.bold {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.progress-bar-title {
+    color: white;
+    font-size: 20px;
+}
+
+.progress-note-container {
+    position: absolute;
+    top: -10%;
+    right: 5%;
+}
+
+.progress-note {
+    position: relative;
+    border-radius: 0.7rem;
+    border-bottom-right-radius: 0;
+    padding: 1rem;
+    background: white;
+    color: #222;
+}
+
+.progress-note span {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.pointy {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    /* border-bottom: 20px solid transparent; */
+    border-right: 20px solid #fff;
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+}
+
+
+.progress {
+    width: 100%;
+    background-color: var(--VeryDarkBlue);
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    margin: 1.1rem 0;
+}
+
+.progress-bg {
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    height: 16px;
+    width: 70%;
+    background: var(--gradient);
+    border-radius: 2rem;
+    position: relative;
+}
+
+.progress-bg::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 2px solid var(--VeryDarkBlue);
+    right: 0;
+    border-radius: 50%;
+    margin-right: 0px;
+}
+
+.progress-bar-mark {
+    width: 100%;
+    color: white;
+    font-weight: bolder;
+}
+
+.progress-bar-mark .max {
+    float: right;
+}
+
+.bg-image {
+    position: absolute;
+    bottom: 0;
+    height: 50vh;
+    width: 100%;
+    background-image: url('images/bg-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+@media (max-width: 375px) {
+    body {
+        background-image: url('images/bg-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .container {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        min-width: 90vw;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+
+    .icon-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-container img {
+        width: 1.5rem;
+    }
+
+    .fylo {
+        margin: 0.4rem 3rem;
+    }
+
+    .fylo img {
+        transform: scale(1);
+        margin-left: -2rem;
+    }
+
+    .icons {
+        margin: 1.5rem 1rem 0 1rem;
+    }
+
+    .progress-bar {
+        min-width: 90vw;
+        border-radius: 0.5rem;
+    }
+
+    .progress-note-container{
+        bottom: 0%;
+        top: 85%;
+        right: 30%;
+    }
+
+    .progress-note {
+        border-radius: 0.7rem;
+    }
+
+    .pointy {
+        display: none;
+    }
+}
